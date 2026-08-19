@@ -322,7 +322,7 @@ const Navbar = () => {
                     <i className="fa-solid fa-user"></i>
                   </div>
 
-                  <div className="notevault-user-name">
+                  <div className="notevault-user-name text-light">
                     {user ? user.name : "User"}
                   </div>
 
