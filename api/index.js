@@ -4,6 +4,7 @@ const connectToMongo = require("../Backend/db");
 module.exports = async (req, res) => {
   try {
     await connectToMongo();
+
     return app(req, res);
   } catch (error) {
     console.error("SERVER ERROR:", error);
