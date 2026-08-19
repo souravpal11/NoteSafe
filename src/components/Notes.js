@@ -348,7 +348,7 @@ const Notes = (props) => {
       <div className="container my-3">
 
         {/* Header */}
-        <div className="d-flex justify-content-between align-items-center mb-4">
+        <div className="d-flex justify-content-between align-items-center mb-4 text-light">
 
           <h2>Your Notes</h2>
 
