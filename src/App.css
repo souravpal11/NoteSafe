@@ -170,7 +170,7 @@ a:hover{
 .auth-card {
   width: 100%;
   max-width: 450px;
-  background: #ffffff;
+  background:   #ffffff;
   border-radius: 15px;
   padding: 35px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
@@ -772,8 +772,31 @@ a:hover{
 }
 
 .about-hero,
-.about-footer {
+.about-footer,
+.about-section,
+.features-section,
+.technology-section {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+}
+.about-section {
+  background: #f8fafc;
+}
+
+/* Profile wrapper */
+.notevault-profile-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Dropdown */
+.notevault-profile-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;              /* Starts exactly from profile button */
+  right: auto;
+  min-width: 280px;
+  z-index: 1050;
 }

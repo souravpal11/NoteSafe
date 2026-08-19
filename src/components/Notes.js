@@ -289,6 +289,9 @@ import noteContext from "../contexts/notes/noteContext";
 import Noteitem from "./Noteitem";
 import AddNote from "./AddNote";
 import EditNote from "./EditNote";
+import {Lottie} from "lottie-react";
+import empty from "../empty.json";
+
 
 const Notes = (props) => {
   const context = useContext(noteContext);
@@ -366,10 +369,17 @@ const Notes = (props) => {
         {/* Empty Notes */}
         {notes.length === 0 ? (
   <div className="text-center mt-5">
+<Lottie
+        animationData={empty}
+        style={{
+          width: 220,
 
-    <div className="empty-notes-icon bg-dark">
-      <i className="fa-regular fa-note-sticky"></i>
-    </div>
+          height: 220,
+
+          margin: "auto",
+        }}
+      />
+    
 
     <h4 className="mt-3 text-light">
       No notes yet

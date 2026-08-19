@@ -312,7 +312,7 @@ const Navbar = () => {
           {isLoggedIn ? (
             <>
               {/* Profile */}
-              <div className="position-relative">
+              <div className="position-relative collapse navbar-collapse notevault-profile-wrapper" id="notevaultNavbar">
                 <button
                   type="button"
                   className="notevault-profile-btn"
@@ -365,7 +365,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-            <div className="collapse navbar-collapse" id="notevaultNavbar">
+            <div className="collapse navbar-collapse" id="notevaultNavbar" d-flex justify-content-evenly>
                <Link
                 className={`btn btn-outline-primary me-2 ${
                   location.pathname === "/about" ? "active" : ""
