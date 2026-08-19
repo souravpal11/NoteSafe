@@ -1,5 +1,5 @@
 body {
-  background: #f8fafe;
+  background: #242629;
 }
 .App {
   text-align: center;
@@ -354,7 +354,7 @@ a:hover{
 
 .notevault-profile-btn:hover {
   background: #f5f7fa;
-  color: #101010;
+  color: #000;
 }
 
 .notevault-avatar {
