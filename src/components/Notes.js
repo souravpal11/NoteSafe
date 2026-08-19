@@ -367,15 +367,15 @@ const Notes = (props) => {
         {notes.length === 0 ? (
   <div className="text-center mt-5">
 
-    <div className="empty-notes-icon">
+    <div className="empty-notes-icon bg-dark">
       <i className="fa-regular fa-note-sticky"></i>
     </div>
 
-    <h4 className="mt-3">
+    <h4 className="mt-3 text-light">
       No notes yet
     </h4>
 
-    <p className="text-muted">
+    <p className="text-muted text-light">
       Click "Add New Note" to create your first note.
     </p>
 
