@@ -82,7 +82,7 @@ router.post(
         });
       }
       const salt = await bcrypt.genSalt(10);
-      const secPass = await bcrypt.hash(req.body.password, salt);
+      const secPass = await bcrypt.hash(req.body.password, salt)
 
       // Create new user
       const user = await User.create({
@@ -116,7 +116,7 @@ router.post(
     body("password", "Password cannot be blank").exists(),
   ],
   async (req, res) => {
-    const errors = validationResult(req);
+    const errors = validationResult(req);;
 
     let success = false;
     // If there are validation errors
