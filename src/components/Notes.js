@@ -375,7 +375,7 @@ const Notes = (props) => {
       No notes yet
     </h4>
 
-    <p className="text-muted text-light">
+    <p className="text-light">
       Click "Add New Note" to create your first note.
     </p>
 
