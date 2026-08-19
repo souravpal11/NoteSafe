@@ -180,6 +180,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import logo from "../logo.png";
 
 const Navbar = () => {
   const location = useLocation();
@@ -230,18 +231,34 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg notevault-navbar sticky-top">
+    <nav className="navbar navbar-expand-lg  navbar-dark bg-black sticky-top">
       <div className="container">
         {/* Logo */}
-        <Link className="navbar-brand notevault-brand" to="/home">
-          <div className="notevault-logo">
-            <i className="fa-solid fa-vault"></i>
-          </div>
-
-          <span>
-            Note<span>Vault</span>
-          </span>
-        </Link>
+        {isLoggedIn ? (
+          <>
+            <Link className="navbar-brand notevault-brand" to="/home">
+              <img
+                src={logo}
+                alt="NoteSafe Logo"
+                width="150"
+                height="45"
+                className="d-inline-block align-text-top me-3"
+              />
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link className="navbar-brand notevault-brand" to="/login">
+              <img
+                src={logo}
+                alt="NoteSafe Logo"
+                width="150"
+                height="45"
+                className="d-inline-block align-text-top me-3"
+              />
+            </Link>
+          </>
+        )}
 
         {/* Mobile Toggle */}
         <button
@@ -259,29 +276,28 @@ const Navbar = () => {
         {/* Navbar Content */}
         <div className="collapse navbar-collapse" id="notevaultNavbar">
           {/* Navigation */}
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-          {isLoggedIn ? (
-            <>
-              <li className="nav-item">
-              <Link
-                className={`nav-link notevault-link ${
-                  location.pathname === "/home" ? "active" : ""
-                }`}
-                to="/home"
-              >
-                <i className="fa-solid fa-house me-1"></i>
-                Home
-              </Link>
-            </li>
-            </>
-          ) : (
-            <></>
-          )}
-            
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 d-flex align-items-center justify-content-around">
+            {isLoggedIn ? (
+              <>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link  ${
+                      location.pathname === "/home" ? "active" : ""
+                    }`}
+                    to="/home"
+                  >
+                    <i className="fa-solid fa-house me-1"></i>
+                    Home
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <></>
+            )}
 
             <li className="nav-item">
               <Link
-                className={`nav-link notevault-link ${
+                className={`nav-link  ${
                   location.pathname === "/about" ? "active" : ""
                 }`}
                 to="/about"
@@ -291,6 +307,8 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+          </div>
+          <div>
           {isLoggedIn ? (
             <>
               {/* Profile */}
@@ -346,7 +364,26 @@ const Navbar = () => {
               </div>
             </>
           ) : (
-            <></>
+            <>
+            <div className="collapse navbar-collapse" id="notevaultNavbar">
+               <Link
+                className={`btn btn-outline-primary me-2 ${
+                  location.pathname === "/about" ? "active" : ""
+                }`}
+                to="/login"
+              >
+                Login
+              </Link> 
+              <Link
+                className={`btn btn-outline-primary me-2 ${
+                  location.pathname === "/about" ? "active" : ""
+                }`}
+                to="/signup"  
+              >
+                Sign Up
+              </Link>
+            </div>
+            </>
           )}
         </div>
       </div>
